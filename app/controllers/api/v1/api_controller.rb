@@ -3,6 +3,7 @@ module Api
     class ApiController < ApplicationController
       include ActionController::HttpAuthentication::Token
       before_action :set_user
+      rescue_from ActionController::ParameterMissing, with: :parameter_missing
 
       private
 
@@ -33,6 +34,10 @@ module Api
           errors: args
         }
       end
+      def parameter_missing(e)
+        render json: failure_messages(:unprocessable_entity, "Params required", [],e.message), status: :unprocessable_entity
+      end
+
 
     end
   end

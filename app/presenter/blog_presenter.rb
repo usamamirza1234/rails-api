@@ -16,4 +16,13 @@ class BlogPresenter
     blogs
   end
 
+  def get_blog
+    {
+      id: @blogs.id,
+      heading: @blogs.heading,
+      sub_heading: @blogs.sub_heading
+    }
+
+  end
+
 end
