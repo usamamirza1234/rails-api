@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="text-align: center">Home Page</h1>
+
+<div style="margin: 2em; border: 2px solid darkblue">
+    <h3 style="text-align: center">Sign up form</h3>
+    <form accept-charset="UTF-8" action="http://localhost:3000/api/v1/sign_up" method="post" id="form"
+          style="margin: 2em; text-align: center">
+        <label>
+            User Name
+            <input type="text" name="user[name]" value="" placeholder="Enter your user_name to sign up">
+        </label>
+        <label>
+            Email
+            <input type="email" name="user[email]" value="" placeholder="Enter your email to sign up">
+        </label>
+        <label>
+            Password
+            <input type="password" name="user[password]" value="" placeholder="Enter your password  to sign up">
+        </label>
+
+        <!--        <input type="hidden" name="user[user_type]" value="1">-->
+
+        <input type="submit" value="Submit" onclick="window.sendForm(event)">
+
+    </form>
+
+</div>
+
+
+<div style="margin: 2em; border: 2px solid darkblue">
+    <h3 style="text-align: center">Sign In form</h3>
+    <form accept-charset="UTF-8" action="http://localhost:3000/api/v1/sign_in" method="post" id="form_sign_in"
+          style="margin: 2em; text-align: center">
+        <label>
+            Email
+            <input type="email" name="user[email]" value="" placeholder="Enter your email to sign up">
+        </label>
+        <label>
+            Password
+            <input type="password" name="user[password]" value="" placeholder="Enter your password  to sign up">
+        </label>
+        <input type="submit" value="Submit" onclick="window.sendSignInForm(event)">
+
+    </form>
+
+</div>
+
+
+<div style="margin: 2em; border: 2px solid darkblue; text-align: center">
+    <h2 id="user"></h2>
+</div>
+
+<div id="container" style="margin: 2em; border: 2px solid darkblue; text-align: center">
+</div>
+
+<footer>
+    <script type="text/javascript" src="application.js"></script>
+</footer>
+
+</body>
+</html>
