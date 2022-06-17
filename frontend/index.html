@@ -50,6 +50,23 @@
     <h2 id="user"></h2>
 </div>
 
+<div style="margin: 2em; border: 2px solid darkblue">
+    <h3 style="text-align: center">Create blog  form</h3>
+    <form accept-charset="UTF-8" action="http://localhost:3000/api/v1/blogs" id="form_blog" method="post"
+          style="margin: 2em; text-align: center">
+        <label>
+            Heading
+            <input name="blog[heading]" placeholder="Enter your Blog heading" type="text" value="">
+        </label>
+        <label>
+            Sub Heading
+            <input name="blog[sub_heading]" placeholder="Enter your Blog Sub heading" type="text" value="">
+        </label>
+        <input onclick="window.sendBlogForm(event)" type="submit" value="Submit">
+    </form>
+</div>
+
+
 <div id="container" style="margin: 2em; border: 2px solid darkblue; text-align: center">
 </div>
 

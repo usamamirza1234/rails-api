@@ -3,7 +3,7 @@ module Api
     class BlogsController < ApiController
 
       skip_before_action :set_user, :only => :index
-      before_action :set_user, only: [:create]
+      before_action :set_user, only: [:create,:destroy]
 
 
       def index
@@ -21,7 +21,17 @@ module Api
       end
 
 
+      def destroy
+        set_blog.destroy!
+        render json: success_messages(:ok,"Blogs Successfully deleted", []), status: :ok
+      end
+
+
       private
+
+      def set_blog
+        Blog.find(params[:id])
+      end
 
       def blog_params
         params.require(:blog).permit(:heading, :sub_heading)

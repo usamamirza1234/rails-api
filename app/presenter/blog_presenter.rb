@@ -9,6 +9,7 @@ class BlogPresenter
    @blogs.each do |blog|
      blogs <<
       {
+        id: blog.id,
         heading: blog.heading,
         sub_heading: blog.sub_heading
       }
