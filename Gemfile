@@ -43,3 +43,4 @@ gem "devise"
 gem 'jwt'
 gem "aws-sdk-s3", require: false
 gem 'rack-cors'
+ #  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
