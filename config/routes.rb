@@ -8,6 +8,12 @@ Rails.application.routes.draw do
         post "sign_in", to: "sessions#create"
       end
       resources :blogs
+      resources :posts do
+        resources :comments
+      end
+      resources :comments do
+        resources :comments
+      end
 
     end
   end
