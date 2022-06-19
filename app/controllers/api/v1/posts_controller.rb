@@ -50,12 +50,13 @@ module Api
       end
 
       def attachments(post)
-        PostPresenter.new(post).get_post.merge(
-          {
-            banner_path: url_for(post.banner),
-            thumbnail_path: url_for(post.thumbnail)
-          }
-        )
+        PostPresenter.new(post).get_post
+          #            .merge(
+          # {
+          #   banner_path: url_for(post.banner),
+          #   thumbnail_path: url_for(post.thumbnail)
+          # }
+        # )
       end
     end
   end
