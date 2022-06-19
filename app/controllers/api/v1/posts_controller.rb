@@ -23,7 +23,7 @@ module Api
 
       def create
         post = Post.new post_params
-        post.user = current_user
+        post.user = set_user
         if post.save
           data =  attachments(post)
           render json: success_messages(201,"Post Successfully Created", data), status: :created
