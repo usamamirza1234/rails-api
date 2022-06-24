@@ -25,8 +25,8 @@ class PostPresenter
       views: @posts.views,
       created_at: @posts.created_at,
       updated_at: DateTimeFormatter.DDMMddyy(@posts.updated_at),
-      banner_cloud_image: @posts.banner.service_url,
-      thumbnail_cloud_image: @posts.thumbnail.service_url
+      banner_cloud_image: @posts.banner.url,
+      thumbnail_cloud_image: @posts.thumbnail.url
     }
   end
 end
